@@ -10,7 +10,7 @@ function App() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`http://api.airvisual.com/v2/nearest_city?key=${APIKEY}`)
+        fetch(`https://api.airvisual.com/v2/nearest_city?key=${APIKEY}`)
             .then(response => {
                 if (!response.ok) throw new Error(`Error  ${response.status}: ${response.statusText}`);
                 return response.json()
@@ -43,7 +43,7 @@ function App() {
                     <p className="text-7xl font-semibold text-[#212121]">{weatherData.temperature}°C</p>
 
                     <div className="info-container">
-                        <img src={`/React-Slider//icons/${weatherData.icon}.svg`} alt="weather icon"
+                        <img src={`/React-Weather/icons/${weatherData.icon}.svg`} alt="weather icon"
                              className="object-cover w-32 h-32 mx-auto block"/>
                     </div>
                 </>
